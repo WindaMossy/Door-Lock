@@ -25,6 +25,13 @@ DorLock adalah sistem kunci pintu pintar berbasis IoT menggunakan **ESP8266**, y
 - Tombol reset
 - Breadboard dan kabel jumper
 
+
+---
+
+## Skema Rangkaian
+
+![Gambar Proyek Anda Disini](https://github.com/WindaMossy/Door-Lock/blob/9600ea29b86f2c630758f484593247ba73ce0fd8/WhatsApp%20Image%202025-07-29%20at%2015.10.43_f6e96083.jpg)
+
 ---
 
 ## 📂 Struktur File
