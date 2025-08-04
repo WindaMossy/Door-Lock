@@ -1,31 +1,38 @@
-# 🔐 DorLock - IoT Smart Door Lock System
+# Sistem Pintu Otomatis Berbasis Fingerprint
 
-DorLock adalah sistem kunci pintu pintar berbasis IoT menggunakan **ESP8266**, yang memungkinkan pengguna membuka kunci pintu menggunakan **PIN** dan memonitor status kunci melalui LCD serta Web Interface.
+Proyek ini merupakan sistem kontrol akses pintu otomatis berbasis sensor fingerprint dengan dukungan **relay** sebagai pengendali kunci. Sistem ini dapat melakukan **pendaftaran sidik jari (enrollment)** dan **verifikasi pengguna secara real-time**, serta membuka pintu otomatis jika sidik jari dikenali.
 
----
+## 🔧 Fitur
+- Mode **enroll** untuk mendaftarkan sidik jari baru
+- Mode **verifikasi** untuk mencocokkan sidik jari dengan database
+- Aktivasi relay untuk membuka pintu selama 3 detik jika sidik jari valid
+- Komunikasi serial melalui **SoftwareSerial** atau **HardwareSerial**
+- Kompatibel dengan Arduino UNO dan ESP8266
 
-## 📦 Fitur Utama
+## 🧰 Komponen dan Library
+- **Arduino UNO
+- **Sensor Fingerprint** AS608)
+- **Relay 1 channel**
+- **Kabel jumper, breadboard**
+- Library Arduino:
+  - [`Adafruit_Fingerprint`](https://github.com/adafruit/Adafruit-Fingerprint-Sensor-Library)
+  - `SoftwareSerial`
 
-- ✅ Buka dan kunci pintu menggunakan kode PIN
-- 🌐 Terhubung ke WiFi dan dikendalikan via Web Server
-- 📟 Menampilkan status di LCD 16x2 I2C
-- 🔒 Penguncian otomatis jika kode salah beberapa kali
-- 🔄 Reset sistem lewat tombol fisik
-- 🔔 Buzzer sebagai indikator
+## ⚙️ Pinout Koneksi (Untuk Arduino UNO)
+| Komponen        | Arduino UNO |
+|----------------|-------------|
+| Sensor TX (Putih) | Pin 3       |
+| Sensor RX (Hijau) | Pin 2       |
+| Relay IN         | Pin 4       |
+| VCC & GND        | 5V & GND    |
 
----
+## 🚀 Cara Menggunakan
+1. **Unggah kode** ke Arduino melalui Arduino IDE.
+2. Buka **Serial Monitor** pada baudrate `9600`.
+3. Tekan `E` untuk masuk ke mode **enrollment**, lalu ikuti petunjuk untuk mendaftarkan sidik jari.
+4. Sistem akan otomatis berpindah ke mode **verifikasi** setelah proses selesai.
+5. Ketika sidik jari terdaftar dikenali, **relay akan aktif selama 3 detik** untuk membuka pintu.
 
-## 🧰 Hardware yang Digunakan
-
-- Arduino Uno
-- Sensor Fingerprint AS608
-- Kunci Elektrik DC 12V (Solenoid Lock)
-- Breadboard dan Kabel Jumper
-- Power Supply 12V
-- Relay  modul
-
-
----
 
 ## Skema Rangkaian
 
